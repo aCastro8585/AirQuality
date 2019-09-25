@@ -1,40 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {City} from '../../model/city'
+import { AirPollutionService } from '../../services/air-pollution.service';
+import { Observable } from 'rxjs';
 
-const ELEMENT_DATA: City[] = [
-  {
-      Id: 3,
-      Name: "Medellín",
-      Country: "Colombia",
-      AlertDevicesCount: 10,
-      WarningDevicesCount: 3,
-      NormalDevicesCount: 1
-  },
-  {
-      Id: 21,
-      Name: "Miami",
-      Country: "United states",
-      AlertDevicesCount: 3,
-      WarningDevicesCount: 1,
-      NormalDevicesCount: 3
-  },
-  {
-      Id: 26,
-      Name: "Rio de Janeiro",
-      Country: "Brasil",
-      AlertDevicesCount: 2,
-      WarningDevicesCount: 5,
-      NormalDevicesCount: 0
-  },
-  {
-      Id: 83,
-      Name: "México D.F.",
-      Country: "México",
-      AlertDevicesCount: 0,
-      WarningDevicesCount: 0,
-      NormalDevicesCount: 2
-  }
-];
 @Component({
   selector: 'cities-monitoring',
   templateUrl: './cities-monitoring.component.html',
@@ -42,10 +10,13 @@ const ELEMENT_DATA: City[] = [
 })
 export class CitiesMonitoringComponent implements OnInit {
   displayedColumns: string[] = ['Id', 'Name', 'Country', 'AlertDevices', 'WarningDevices', 'NormalDevices'];
-  dataSource = ELEMENT_DATA;
-  constructor() { }
+
+  public dataSource: Observable<City[]>;
+
+  constructor(private airPollutionService: AirPollutionService) { }
 
   ngOnInit() {
+    this.dataSource=this.airPollutionService.getCitiesInformation();
   }
 
 }
