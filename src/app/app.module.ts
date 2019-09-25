@@ -8,6 +8,7 @@ import {MatTableModule} from '@angular/material/table';
 import { CitiesMonitoringComponent } from './air-quality-tables/cities-monitoring/cities-monitoring.component';
 import { DevicesMonitoringComponent } from './air-quality-tables/devices-monitoring/devices-monitoring.component'
 import { HttpClientModule } from '@angular/common/http';
+import {MatExpansionModule} from '@angular/material'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NoopAnimationsModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

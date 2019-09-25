@@ -1,1 +1,18 @@
-<p>devices-monitoring works!</p>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let device of devices | async">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{device.Name + ' (' + device.Id + ')'}}  
+        </mat-panel-title>
+        <mat-panel-description>
+                Last Activity: {{device.LastActivity}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      Temperatura: {{device.Temperature }}  Air Quality: {{device.AirQuality }}  Storm Level: {{device.StormLevel }}
+
+    </mat-expansion-panel>
+      
+    
+  </mat-accordion>
+  
