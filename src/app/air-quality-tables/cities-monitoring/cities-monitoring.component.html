@@ -1,1 +1,46 @@
-<p>cities-monitoring works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="Id">
+      <th mat-header-cell *matHeaderCellDef> Id. </th>
+      <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Country">
+      <th mat-header-cell *matHeaderCellDef> Country </th>
+      <td mat-cell *matCellDef="let element"> {{element.Country}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="AlertDevices">
+      <th mat-header-cell *matHeaderCellDef> Alert Devices </th>
+      <td mat-cell *matCellDef="let element"> {{element.AlertDevicesCount}} </td>
+    </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="WarningDevices">
+        <th mat-header-cell *matHeaderCellDef> Warning Devices </th>
+        <td mat-cell *matCellDef="let element"> {{element.WarningDevicesCount}} </td>
+      </ng-container>
+
+        <!-- Symbol Column -->
+    <ng-container matColumnDef="NormalDevices">
+        <th mat-header-cell *matHeaderCellDef> Normal Devices </th>
+        <td mat-cell *matCellDef="let element"> {{element.NormalDevicesCount}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
