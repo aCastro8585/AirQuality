@@ -1,18 +1,20 @@
 <mat-accordion>
     <mat-expansion-panel *ngFor="let device of devices | async">
       <mat-expansion-panel-header>
-        <mat-panel-title>
-            {{device.Name + ' (' + device.Id + ')'}}  
+        <mat-panel-title class="w-50 d-flex justify-content-center">
+         <h6>  {{device.Name + ' (' + device.Id + ')'}} </h6>
+        
         </mat-panel-title>
-        <mat-panel-description>
-                Last Activity: {{device.LastActivity}}
+        <mat-panel-description class="w-50 d-flex justify-content-center">
+            Last Activity: {{device.LastActivity | date:"medium" : UTC -5}}
         </mat-panel-description>
-      </mat-expansion-panel-header>
-  
-      Temperatura: {{device.Temperature }}  Air Quality: {{device.AirQuality }}  Storm Level: {{device.StormLevel }}
-
+      </mat-expansion-panel-header >
+  <div class="d-flex flex-row ">
+      <span class="w-40 d-inline-flex justify-content-center"><b>Temperatura: &nbsp;</b>{{device.Temperature }} </span> 
+      <span class="w-30 d-inline-flex justify-content-center"> <b>Air Quality: &nbsp;</b> {{device.AirQuality }}  </span> 
+        <span class="w-30 d-inline-flex justify-content-center">   <b>Storm Level: &nbsp;</b>{{device.StormLevel }} </span> 
+      </div>
     </mat-expansion-panel>
-      
-    
+        
   </mat-accordion>
   

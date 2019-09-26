@@ -1,3 +1,24 @@
 table {
     width: 100%;
   }
+
+table th{
+  font-size:1.2rem;
+}
+.mat-column-Name, .mat-column-Country, .mat-column-AlertDevices, .mat-column-WarningDevices, .mat-column-NormalDevices{
+ 
+  width: 15% ;
+ 
+}
+
+.mat-column-AlertDevices, .mat-column-WarningDevices, .mat-column-NormalDevices{
+ 
+  text-align: center ;
+ 
+}
+.mat-column-Id {
+ 
+  width: 6% ;
+ 
+}
+
