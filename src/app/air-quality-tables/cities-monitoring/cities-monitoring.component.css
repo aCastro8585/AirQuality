@@ -22,3 +22,6 @@ table th{
  
 }
 
+.mat-cell{
+  min-width: 100px;
+}
